@@ -85,14 +85,40 @@ Follow these steps to run the project locally:
 
 ## 🌐 Deployment to Vercel
 
-Vercel automatically detects Astro projects and configures the build settings correctly without any special adapters:
+Vercel automatically detects Astro projects and configures the build settings correctly. You have two ways to deploy this project:
 
-- **Build Command**: `npm run build` or `astro build`
-- **Output Directory**: `dist`
-- **Install Command**: `npm install`
+### Option 1: Vercel GitHub Git Integration (Recommended)
+This is the easiest option and sets up automated continuous deployment (CD). Every time you push a change to the `main` branch, Vercel will rebuild and deploy your site.
 
-To deploy manually via CLI:
-```bash
-npx vercel
-```
-Or hook up the GitHub repository to your Vercel Dashboard for automated continuous deployment (recommended).
+1. **Sign in to Vercel**: Go to [vercel.com](https://vercel.com/) and log in (preferably via your GitHub account `rajkumarthirumalai`).
+2. **Add New Project**:
+   - Click the **"Add New..."** button on your dashboard and select **"Project"**.
+3. **Import Repository**:
+   - Locate and click **"Import"** next to the `havebath` repository.
+4. **Configure Project**:
+   - Vercel will automatically detect **Astro** as the Framework Preset.
+   - Leave all default settings (Build Command: `npm run build`, Output Directory: `dist`).
+5. **Deploy**:
+   - Click **"Deploy"**. The build will complete in under 30 seconds and you will receive a production URL (e.g. `havebath.vercel.app`).
+
+### Option 2: Vercel CLI (Command Line)
+If you prefer deploying directly from your terminal:
+
+1. **Install Vercel CLI**:
+   ```bash
+   npm install -g vercel
+   ```
+2. **Login**:
+   ```bash
+   vercel login
+   ```
+3. **Deploy (Development Preview)**:
+   Run this command in the project root:
+   ```bash
+   vercel
+   ```
+   *Follow the prompts to link the project to your Vercel account.*
+4. **Deploy (Production)**:
+   ```bash
+   vercel --prod
+   ```
